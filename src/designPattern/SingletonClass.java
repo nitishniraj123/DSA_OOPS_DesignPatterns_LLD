@@ -2,6 +2,7 @@ package designPattern;
 
 import javax.swing.border.SoftBevelBorder;
 import java.lang.reflect.Constructor;
+import java.util.Scanner;
 
 public class SingletonClass {
     private static SingletonClass singletonClass = null;
@@ -23,7 +24,7 @@ public class SingletonClass {
         obj2=getSingletonClass();
         System.out.println(obj1.hashCode() + " "+obj2.hashCode());
         try {
-            Constructor constructor = SingletonClass.class.getDeclaredConstructor();
+            Constructor constructor = SingletonClass.class.getConstructor();
             constructor.setAccessible(true);
             obj2 = (SingletonClass) constructor.newInstance();
         }
@@ -31,5 +32,7 @@ public class SingletonClass {
             System.out.println(e);
         }
         System.out.println(obj1.hashCode() + " "+obj2.hashCode());
+        Scanner sc = new Scanner(System.in);
+
     }
 }

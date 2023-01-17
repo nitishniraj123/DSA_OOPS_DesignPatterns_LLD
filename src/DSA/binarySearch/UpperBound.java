@@ -1,5 +1,8 @@
 package DSA.binarySearch;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class UpperBound {
     private static int getUpperBound(int[] arr, int key){
         int l =0,h=arr.length,mid;
@@ -15,6 +18,7 @@ public class UpperBound {
         if(l<arr.length && key>=arr[arr.length-1]){
             l++;
         }
+        TreeMap<Integer,Integer> tm = new TreeMap<>();
         return l;
     }
 

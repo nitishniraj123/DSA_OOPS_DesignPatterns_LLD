@@ -9,7 +9,7 @@ public class WordsCountInFile {
         String line = null;
         int wordsCount=0;
         String[] words = null;
-        FileReader file = new FileReader("/Users/nitish.niraj/git/DSA&OOPS&DesignPatterns/src/oops/files/input.txt");
+        FileReader file = new FileReader("/Users/nitish.niraj/git/DSA_OOPS_DesignPatterns_LLD/src/oops/files/input.txt");
         BufferedReader br = new BufferedReader(file);
         line = br.readLine();
         while(null != line){
