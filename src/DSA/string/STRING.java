@@ -1,5 +1,6 @@
 package DSA.string;
 
+import java.security.Timestamp;
 import java.util.*;
 
 public class STRING {
@@ -34,6 +35,18 @@ public class STRING {
         }
 
         String s = null;
-        System.out.println(s.equalsIgnoreCase("sonali"));
+        //System.out.println(s.equalsIgnoreCase("sonali"));
+
+
+        char s1 = 'b';
+        String s2 = "abb";
+        if(s2.charAt(0)>s1){
+            System.out.println("s2");
+        }
+        else {
+            System.out.println("s1");
+        }
+
+        System.out.println();
     }
 }

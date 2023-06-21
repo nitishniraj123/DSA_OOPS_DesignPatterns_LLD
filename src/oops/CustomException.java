@@ -15,7 +15,7 @@ class CatchCustomException{
 
     public void checkRemainingDeveloper(String developer){
         if(remainingDeveloper.contains(developer)){
-            System.out.print("developer exist after firing\n"+developer);
+            System.out.print("developer exist after firing\n"+developer+"\n");
         }
         else{
             throw new CustomException("developer not exist due to firing");
@@ -24,6 +24,12 @@ class CatchCustomException{
 
     public static void main(String[] args) {
         CatchCustomException catchCustomException = new CatchCustomException();
-        catchCustomException.checkRemainingDeveloper("ashok");
+        try {
+            catchCustomException.checkRemainingDeveloper("gaur");
+        }
+        catch (CustomException customException){
+            System.out.println(customException);
+        }
+        System.out.println("normal flow of code continue");
     }
 }

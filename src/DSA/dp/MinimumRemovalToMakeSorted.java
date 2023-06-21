@@ -67,5 +67,9 @@ public class MinimumRemovalToMakeSorted {
         int N = H.length;
         MinimumRemovalToMakeSorted minimumRemovalToMakeSorted = new MinimumRemovalToMakeSorted();
         System.out.println("get meninumum removal "+minimumRemovalToMakeSorted.getMinimumRemoval(H,N));
+        int x= 5;
+        int y=x++;
+        int z=++y;
+        System.out.println(z);
     }
 }

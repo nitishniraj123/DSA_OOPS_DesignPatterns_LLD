@@ -1,5 +1,4 @@
 package oops.files;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,6 +17,7 @@ public class WordsCountInFile {
             line = br.readLine();
         }
         return wordsCount;
+
     }
     public static void main(String[] args) throws IOException {
         System.out.println(getNumberOfWordsInFile());

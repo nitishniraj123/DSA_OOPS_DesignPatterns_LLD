@@ -42,7 +42,26 @@ Related Courses
  */
 package DSA.dp;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class KnapsackProblem01 {
+    private static long solve(List<Integer> bandwidth , List<Integer> request , int total_bandwidht){
+        int n = bandwidth.size();
+        long[][] dp = new long[total_bandwidht+1][n+1];
+        for(int i=0;i<=total_bandwidht;i++){
+            for(int j=0;j<=n;j++){
+                if(i==0 || j==0){
+                    dp[i][j]=0;
+                }
+                else{
+                    dp[i][j]=(i>=bandwidth.get(j-1) ? Math.max(request.get(j-1) + dp[i-bandwidth.get(j-1)][j-1],dp[i][j-1]) : dp[i][j-1]);
+                }
+            }
+        }
+        return dp[total_bandwidht][n];
+    }
     private int getMaxValue(int[] values,int[] weights,int N,int W){
         int[][]dp = new int[W+1][N+1];
         for(int i=0;i<=W;i++){
@@ -58,9 +77,13 @@ public class KnapsackProblem01 {
         return dp[W][N];
     }
     public static void main(String[] args) {
-        int N=3,W=4;
-        int[] values={1,2,3};
-        int[] weights = {4,5,1};
+        int N=5,W=500;
+        int[] values={270,142,450,124,189};
+        int[] weights = {200,100,350,50,100};
+        List<int[]> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        list1 = Arrays.asList(values);
+        //System.out.println(solve(Arrays.asList(weights),values,W));
         KnapsackProblem01 knapsackProblem01 = new KnapsackProblem01();
         System.out.println("maxmimum values collected is  "+knapsackProblem01.getMaxValue(values,weights,N,W));
     }
