@@ -1,9 +1,32 @@
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Test1 {
+
+    private static class C{
+        String s;
+        Set<String> str;
+
+        public C(String s, Set<String> str) {
+            this.s = s;
+            this.str = str;
+        }
+
+        public String getS() {
+            return s;
+        }
+
+        public Set<String> getStr() {
+            return str;
+        }
+
+        @Override
+        public String toString() {
+            return "C{" +
+                    "s='" + s + '\'' +
+                    ", str=" + str +
+                    '}';
+        }
+    }
     private static  List<Integer>  getMaximumFromWindow(int[] arr , int k){
         List<Integer> ans = new ArrayList<>();
         Deque<Integer> dq = new LinkedList<>();
@@ -83,6 +106,7 @@ public class Test1 {
         }
         return  ans;
     }
+
     public static void main(String[] args) {
         int[] arr= {5,4,8,2,7};
         int k = 3;
@@ -103,7 +127,10 @@ public class Test1 {
         burstTime.add(6);
         System.out.println(solve3(n,burstTime));
 
-
+        C c = new C("nitish",new HashSet<>());
+        System.out.println(c.toString());
+        c.str.add("niraj");
+        System.out.println(c.toString());
 
     }
 }

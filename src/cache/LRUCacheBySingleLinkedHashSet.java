@@ -10,6 +10,7 @@ public class LRUCacheBySingleLinkedHashSet {
         } else {
             if (pagesSet.size() == mmSize) {//overflow
                 int leastRecentlyUsedPage = pagesSet.iterator().next();
+                Map<Integer,Integer> mp = new HashMap<>();
                 pagesSet.remove(leastRecentlyUsedPage);
             }
         }

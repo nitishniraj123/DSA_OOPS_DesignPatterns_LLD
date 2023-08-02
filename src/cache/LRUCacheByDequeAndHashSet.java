@@ -24,12 +24,7 @@ public class LRUCacheByDequeAndHashSet {
         for (int page : pages) {
             refer(dq, set, page, mmSize);
         }
-        List<Integer> remainingPagesInMainMemory = new ArrayList<>();
-        Iterator<Integer> itr = dq.iterator();
-        while (itr.hasNext()) {
-            remainingPagesInMainMemory.add(itr.next());
-        }
-        return remainingPagesInMainMemory;
+        return new ArrayList<>(dq);
     }
 
     public static void main(String[] args) {

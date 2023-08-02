@@ -27,6 +27,15 @@ class ObjectCloning implements Cloneable {
         return Objects.hash(name, version);
     }
 
+    @Override
+    public String toString() {
+        return "ObjectCloning{" +
+                "name='" + name + '\'' +
+                ", version=" + version +
+                ", p=" + p +
+                '}';
+    }
+
     public static void main(String[] args) {
 
         // create an object of Main class
@@ -38,9 +47,7 @@ class ObjectCloning implements Cloneable {
         obj1.p=12;
 
         // print variable
-        System.out.println(obj1.name);       // Java
-        System.out.println(obj1.version);    // 14
-        System.out.println(obj1.p);
+        System.out.println(obj1.toString());
 
         try {
 
@@ -50,17 +57,13 @@ class ObjectCloning implements Cloneable {
             System.out.println(obj1.hashCode());
             System.out.println(obj2.hashCode());
             // print the variables using obj2
-            System.out.println(obj2.name);      // Java
-            System.out.println(obj2.version);   // 14
-            System.out.println(obj1.p);
+            System.out.println(obj2.toString());
             System.out.println(obj1.equals(obj2));
             obj2.name = "jms";
             obj2.p=5;
-            System.out.println(obj2.name);
-            System.out.println(obj1.name);
-            System.out.println(obj1.p);
-            System.out.println(obj2.p);
-        } catch (Exception e) {
+            System.out.println(obj2.toString());
+            System.out.println(obj1.equals(obj2));
+         } catch (Exception e) {
             System.out.println(e);
         }
 

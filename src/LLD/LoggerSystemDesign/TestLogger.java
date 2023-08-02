@@ -7,5 +7,6 @@ public class TestLogger {
         logger.log(Logger.warnLog,"here is warning log");
         logger.log(Logger.debugLog,"here is debug log");
         logger.log(Logger.errorLog,"here is error log");
+
     }
 }

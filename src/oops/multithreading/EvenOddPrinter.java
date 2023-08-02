@@ -10,6 +10,7 @@ public class EvenOddPrinter {
             while (counter <= MAX_VALUE) {
                 synchronized (lock) {
                     if (counter % 2 == 0) {
+                        System.out.println(Thread.currentThread().getId());
                         System.out.println("Even Thread: " + counter);
                         counter++;
                     }
@@ -21,6 +22,7 @@ public class EvenOddPrinter {
             while (counter <= MAX_VALUE) {
                 synchronized (lock) {
                     if (counter % 2 != 0) {
+                        System.out.println(Thread.currentThread().getId());
                         System.out.println("Odd Thread: " + counter);
                         counter++;
                     }

@@ -56,10 +56,10 @@ public class TripletCountAndGetUniqueElementFromSortedArray {
         PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
         pq.add(3);
         pq.offer(4);
-        System.out.println(pq.poll());
+        //System.out.println(pq.poll());
         //System.out.println(l);
         countTriplet(arr);
-        int[] arr1 = {1,1,2,2,3,4,4,8,8};
-        //System.out.println(solve1(arr1));
+        int[] arr1 = {1,1,2,2,3,3,4,4,5};
+        System.out.println(solve1(arr1));
     }
 }
